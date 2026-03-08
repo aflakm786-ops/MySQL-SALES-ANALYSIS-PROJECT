@@ -4,6 +4,7 @@
 This project focuses on analyzing sales data using SQL to understand business performance and identify important trends. Different business questions were explored to generate meaningful insights from the dataset.
 
 ## Tools Used
+- PANDAS
 - MySQL
 - SQL
 - GitHub
