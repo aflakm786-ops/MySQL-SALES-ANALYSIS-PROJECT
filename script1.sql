@@ -145,6 +145,7 @@ from aggregation;
 #avg order value= total sale / tot numb of order
 #average monthly spend= total sales/numb of months
 
+ ### PRODUCT REPORT
 create view product_analysis_report as
 with base1 as(
 select s.order_number,s.order_date,s.customer_key,s.sales_amount,s.quantity,
@@ -170,7 +171,7 @@ ROUND(SUM(sales_amount) / NULLIF(SUM(quantity),0),1) AS avg_selling_price
 FROM base1 GROUP BY product_key,product_name,category,subcategory,cost)
 
 
-###### PRODUCT REPORT
+
  SELECT product_key,product_name,category,subcategory,cost,last_sale_date,
 timestampdiff(MONTH, last_sale_date, now()) AS recency_in_months,
 
