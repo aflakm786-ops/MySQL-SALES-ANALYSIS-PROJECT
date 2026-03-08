@@ -93,7 +93,7 @@ ELSE 'New'
 END customer_segment FROM customer;
 
 
-######################
+###################### CUSTOMER REPORT
 create view  sales_report_customer as
 with base as(
 select s.order_number,s.product_key,s.order_date,s.sales_amount,s.quantity,c.customer_key,c.customer_number,
@@ -170,7 +170,7 @@ ROUND(SUM(sales_amount) / NULLIF(SUM(quantity),0),1) AS avg_selling_price
 FROM base1 GROUP BY product_key,product_name,category,subcategory,cost)
 
 
-######
+###### PRODUCT REPORT
  SELECT product_key,product_name,category,subcategory,cost,last_sale_date,
 timestampdiff(MONTH, last_sale_date, now()) AS recency_in_months,
 
